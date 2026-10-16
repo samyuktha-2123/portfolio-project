@@ -1,0 +1,453 @@
+.project-details {
+  min-height: 100vh;
+
+  padding: 140px 6% 100px;
+
+  background: var(--bg-primary);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.project-details::before {
+  content: '';
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  top: 10%;
+  right: -300px;
+
+  border-radius: 50%;
+
+  background: color-mix(
+    in srgb,
+    var(--primary) 12%,
+    transparent
+  );
+
+  filter: blur(140px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.details-container {
+  max-width: 1200px;
+
+  margin: auto;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   BACK LINK
+========================================= */
+
+.back-link {
+  display: inline-flex;
+
+  color: var(--text-secondary);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  margin-bottom: 60px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.back-link:hover {
+  color: var(--primary);
+
+  transform: translateX(-4px);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.details-header {
+  max-width: 850px;
+
+  margin-bottom: 70px;
+}
+
+.eyebrow {
+  color: var(--primary);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.details-header h1 {
+  margin: 18px 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(44px, 7vw, 80px);
+
+  line-height: 1;
+
+  letter-spacing: -3px;
+}
+
+.details-header p {
+  max-width: 700px;
+
+  color: var(--text-secondary);
+
+  font-size: 19px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   DETAILS GRID
+========================================= */
+
+.details-grid {
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   VISUAL WINDOW
+========================================= */
+
+.visual-window {
+  min-height: 420px;
+
+  border-radius: var(--radius-lg);
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =========================================
+   WINDOW HEADER
+========================================= */
+
+.window-header {
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding-left: 18px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  background: var(--bg-soft);
+}
+
+.window-header span {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--text-muted);
+}
+
+
+/* =========================================
+   VISUAL CONTENT
+========================================= */
+
+.visual-content {
+  min-height: 375px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle,
+      color-mix(
+        in srgb,
+        var(--primary) 14%,
+        transparent
+      ),
+      transparent 55%
+    );
+}
+
+.visual-content span {
+  color: color-mix(
+    in srgb,
+    var(--text-primary) 10%,
+    transparent
+  );
+
+  font-size: 50px;
+
+  font-weight: 900;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+.details-content h2 {
+  color: var(--text-primary);
+
+  font-size: 28px;
+
+  margin-bottom: 28px;
+}
+
+.details-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+
+  gap: 15px;
+
+  align-items: flex-start;
+}
+
+.detail-item > span {
+  width: 25px;
+  height: 25px;
+
+  min-width: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-size: 12px;
+}
+
+.detail-item p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   TECHNOLOGIES
+========================================= */
+
+.technology-title {
+  margin-top: 45px;
+}
+
+.technology-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.technology-list span {
+  padding: 9px 13px;
+
+  border-radius: var(--radius-sm);
+
+  color: var(--primary);
+
+  background: var(--primary-light);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--primary) 20%,
+      var(--border-color)
+    );
+
+  font-size: 12px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.technology-list span:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--primary);
+}
+
+
+/* =========================================
+   FOOTER BUTTON
+========================================= */
+
+.details-footer {
+  margin-top: 70px;
+}
+
+.projects-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 22px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.projects-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.not-found {
+  min-height: 100vh;
+
+  padding: 180px 6%;
+
+  text-align: center;
+
+  background: var(--bg-primary);
+
+  color: var(--text-primary);
+}
+
+.not-found p {
+  color: var(--text-secondary);
+}
+
+.not-found a {
+  color: var(--primary);
+
+  text-decoration: none;
+}
+
+.not-found a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-window {
+    min-height: 320px;
+  }
+
+  .visual-content {
+    min-height: 275px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .project-details {
+    padding: 110px 5% 70px;
+  }
+
+  .details-header h1 {
+    letter-spacing: -2px;
+  }
+
+  .details-header p {
+    font-size: 16px;
+  }
+
+  .details-grid {
+    gap: 40px;
+  }
+
+  .details-footer {
+    margin-top: 50px;
+  }
+}

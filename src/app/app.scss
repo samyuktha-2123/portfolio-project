@@ -1,0 +1,33 @@
+// :host {
+
+//   display: block;
+
+// }
+
+// main {
+
+//   min-height: 100vh;
+
+//   padding-top: var(--navbar-height);
+
+//   padding-bottom: var(--footer-height);
+
+//   background: var(--bg-primary);
+
+// }
+
+:host {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+main {
+
+  flex: 1;
+
+}

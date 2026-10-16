@@ -1,0 +1,428 @@
+.about-section {
+  min-height: 100vh;
+  padding: 140px 6% 100px;
+
+  background: var(--bg-primary);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background glow */
+
+.about-section::before {
+  content: '';
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: 10%;
+  left: -250px;
+
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+
+  filter: blur(120px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 70px;
+}
+
+.eyebrow {
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.section-heading h1 {
+  font-size: clamp(38px, 5vw, 64px);
+
+  line-height: 1.05;
+
+  margin: 18px 0;
+
+  color: var(--text-primary);
+}
+
+.section-heading h1 span {
+  background: var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading p {
+  color: var(--text-secondary);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ABOUT GRID
+========================================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card {
+  position: relative;
+
+  width: 390px;
+  height: 480px;
+
+  border-radius: 28px;
+
+  padding: 6px;
+
+  background: var(--gradient-primary);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.15),
+    0 0 80px rgba(124, 58, 237, 0.12);
+
+  // transform: rotate(2deg);
+
+  transition: 0.4s ease;
+
+  overflow: hidden;
+}
+
+.profile-card:hover {
+  // transform: rotate(0deg) translateY(-8px);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.18),
+    0 0 100px rgba(124, 58, 237, 0.18);
+}
+
+.profile-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  border-radius: 23px;
+
+  display: block;
+}
+
+.profile-info {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  padding: 16px 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.profile-info strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 15px;
+
+  margin-bottom: 4px;
+}
+
+.profile-info span {
+  color: var(--text-secondary);
+
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  .profile-card {
+    width: 280px;
+    height: 350px;
+
+    transform: none;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .profile-info {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    padding: 12px 14px;
+  }
+}
+
+/* =========================================
+   EXPERIENCE BADGE
+========================================= */
+
+.experience-badge {
+  position: absolute;
+
+  right: -35px;
+  bottom: 35px;
+
+  padding: 18px 24px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-color);
+
+  backdrop-filter: blur(15px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.experience-badge strong {
+  display: block;
+
+  font-size: 30px;
+
+  color: var(--primary);
+}
+
+.experience-badge span {
+  color: var(--text-muted);
+
+  font-size: 13px;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-content h2 {
+  color: var(--text-primary);
+
+  font-size: 32px;
+
+  margin-bottom: 25px;
+}
+
+.about-content h2 span {
+  color: var(--primary);
+}
+
+.about-content p {
+  color: var(--text-secondary);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  margin-bottom: 18px;
+}
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.about-highlights {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+  margin: 35px 0;
+}
+
+.highlight {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--primary);
+
+  background: color-mix(in srgb, var(--primary) 4%, var(--bg-card));
+
+  box-shadow: var(--shadow-md);
+}
+
+.highlight .icon {
+  font-size: 24px;
+}
+
+.highlight strong {
+  display: block;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+
+  margin-bottom: 4px;
+}
+
+.highlight small {
+  color: var(--text-muted);
+
+  font-size: 12px;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 22px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--gradient-primary);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .about-visual {
+    order: 2;
+  }
+
+  .about-content {
+    order: 1;
+  }
+
+  .image-frame {
+    width: 320px;
+    height: 400px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 110px 5% 70px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-badge {
+    right: -10px;
+  }
+
+  .image-frame {
+    width: 280px;
+    height: 350px;
+  }
+}

@@ -1,0 +1,136 @@
+<nav class="navbar">
+  <div class="navbar-container">
+
+    <a
+      class="brand"
+      routerLink="/"
+      (click)="closeMenu()"
+    >
+      <!-- <span class="brand-logo">SK</span> -->
+      <img
+        src="/images/profile_logo.png"
+        alt="Samyuktha Logo"
+        class="brand-logo"
+      />
+
+      <span class="brand-name">
+        Samyuktha Kurapati
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-links">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+
+      <a routerLink="/about" routerLinkActive="active">
+        About
+      </a>
+
+      <a routerLink="/skills" routerLinkActive="active">
+        Skills
+      </a>
+
+      <a routerLink="/projects" routerLinkActive="active">
+        Projects
+      </a>
+
+      <a routerLink="/experience" routerLinkActive="active">
+        Experience
+      </a>
+
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact
+      </a>
+    </div>
+
+    <a
+      class="resume-button"
+      href="assets/resume_samyuktha.pdf"
+      target="_blank"
+    >
+      Resume
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Toggle navigation menu"
+      (click)="toggleMenu()"
+    >
+      {{ menuOpen ? '✕' : '☰' }}
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  @if (menuOpen) {
+    <div class="mobile-menu">
+
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+      >
+        Home
+      </a>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        About
+      </a>
+
+      <a
+        routerLink="/skills"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        Skills
+      </a>
+
+      <a
+        routerLink="/projects"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        Projects
+      </a>
+
+      <a
+        routerLink="/experience"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        Experience
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        Contact
+      </a>
+
+      <a
+        class="mobile-resume"
+        href="assets/Samyuktha-Kurapati-Resume.pdf"
+        target="_blank"
+        (click)="closeMenu()"
+      >
+        View Resume
+      </a>
+
+    </div>
+  }
+</nav>

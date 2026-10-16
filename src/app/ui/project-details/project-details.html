@@ -1,0 +1,107 @@
+@if (project; as currentProject) {
+
+  <section class="project-details">
+
+    <div class="details-container">
+
+      <a routerLink="/projects" class="back-link">
+        ← Back to Projects
+      </a>
+
+      <div class="details-header">
+
+        <span class="eyebrow">
+          {{ currentProject.category }}
+        </span>
+
+        <h1>
+          {{ currentProject.title }}
+        </h1>
+
+        <p>
+          {{ currentProject.description }}
+        </p>
+
+      </div>
+
+      <div class="details-grid">
+
+        <div class="details-visual">
+
+          <div class="visual-window">
+
+            <div class="window-header">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="visual-content">
+              <span>{{ currentProject.title }}</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="details-content">
+
+          <h2>Project Overview</h2>
+
+          <div class="details-list">
+
+            @for (detail of currentProject.details; track detail) {
+              <div class="detail-item">
+                <span>✓</span>
+                <p>{{ detail }}</p>
+              </div>
+            }
+
+          </div>
+
+          <h2 class="technology-title">
+            Technologies
+          </h2>
+
+          <div class="technology-list">
+
+            @for (technology of currentProject.technologies; track technology) {
+              <span>{{ technology }}</span>
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="details-footer">
+
+        <a routerLink="/projects" class="projects-button">
+          View All Projects
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+} @else {
+
+  <section class="not-found">
+
+    <h1>Project not found</h1>
+
+    <p>
+      The project you're looking for doesn't exist.
+    </p>
+
+    <a routerLink="/projects">
+      Back to Projects
+    </a>
+
+  </section>
+
+}

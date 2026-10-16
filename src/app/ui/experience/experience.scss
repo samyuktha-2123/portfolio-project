@@ -1,0 +1,512 @@
+.experience-section {
+  min-height: 100vh;
+  padding: 140px 6% 110px;
+
+  background: var(--bg-primary);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.experience-section::before {
+  content: '';
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  left: -350px;
+  top: 25%;
+
+  border-radius: 50%;
+
+  background: color-mix(
+    in srgb,
+    var(--primary) 10%,
+    transparent
+  );
+
+  filter: blur(140px);
+
+  pointer-events: none;
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: auto;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 80px;
+}
+
+.eyebrow {
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.section-heading h1 {
+  color: var(--text-primary);
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  line-height: 1.05;
+
+  margin: 18px 0;
+}
+
+.section-heading h1 span {
+  background: var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading p {
+  color: var(--text-secondary);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+  position: relative;
+
+  padding-left: 55px;
+}
+
+.timeline::before {
+  content: '';
+
+  position: absolute;
+
+  left: 9px;
+  top: 15px;
+  bottom: 15px;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    color-mix(
+      in srgb,
+      var(--primary) 10%,
+      transparent
+    )
+  );
+}
+
+.timeline-item {
+  position: relative;
+
+  margin-bottom: 45px;
+}
+
+
+/* =========================================
+   TIMELINE MARKER
+========================================= */
+
+.timeline-marker {
+  position: absolute;
+
+  left: -55px;
+  top: 10px;
+
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--bg-primary);
+
+  border: 1px solid var(--primary);
+
+  z-index: 2;
+}
+
+.timeline-marker span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  box-shadow:
+    0 0 15px
+    color-mix(
+      in srgb,
+      var(--primary) 70%,
+      transparent
+    );
+}
+
+
+/* =========================================
+   TIMELINE CARD
+========================================= */
+
+.timeline-card {
+  padding: 32px;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-color);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateX(6px);
+
+  border-color: var(--primary);
+
+  background: color-mix(
+    in srgb,
+    var(--primary) 3%,
+    var(--bg-card)
+  );
+
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================
+   TIMELINE HEADER
+========================================= */
+
+.timeline-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.timeline-date {
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+.timeline-header h2 {
+  color: var(--text-primary);
+
+  font-size: 28px;
+
+  margin: 10px 0 5px;
+}
+
+.timeline-header h3 {
+  color: var(--text-secondary);
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   ROLE NUMBER
+========================================= */
+
+.role-number {
+  color: color-mix(
+    in srgb,
+    var(--text-primary) 7%,
+    transparent
+  );
+
+  font-size: 55px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location {
+  color: var(--text-muted);
+
+  font-size: 13px;
+
+  margin: 18px 0;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.role-description {
+  max-width: 750px;
+
+  color: var(--text-secondary);
+
+  line-height: 1.8;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   RESPONSIBILITIES
+========================================= */
+
+.responsibilities {
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+.responsibility {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+.responsibility span {
+  min-width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.responsibility p {
+  color: var(--text-secondary);
+
+  line-height: 1.6;
+
+  font-size: 14px;
+
+  margin: 3px 0 0;
+}
+
+
+/* =========================================
+   EXPERIENCE TAGS
+========================================= */
+
+.experience-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.experience-tags span {
+  padding: 7px 10px;
+
+  border-radius: 7px;
+
+  background: var(--bg-soft);
+
+  color: var(--text-secondary);
+
+  border: 1px solid var(--border-light);
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   ACHIEVEMENT
+========================================= */
+
+.achievement {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  margin: 75px 0 0 55px;
+
+  padding: 28px;
+
+  border-radius: var(--radius-lg);
+
+  background: linear-gradient(
+    100deg,
+    color-mix(
+      in srgb,
+      var(--primary) 10%,
+      var(--bg-card)
+    ),
+    color-mix(
+      in srgb,
+      var(--secondary) 5%,
+      var(--bg-card)
+    )
+  );
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--primary) 18%,
+      var(--border-color)
+    );
+
+  box-shadow: var(--shadow-sm);
+}
+
+.achievement-icon {
+  width: 55px;
+  height: 55px;
+
+  min-width: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: var(--primary-light);
+
+  font-size: 25px;
+}
+
+.achievement span {
+  color: var(--primary);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.achievement h2 {
+  color: var(--text-primary);
+
+  margin: 6px 0;
+
+  font-size: 22px;
+}
+
+.achievement p {
+  color: var(--text-secondary);
+
+  margin: 0;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .experience-section {
+    padding: 110px 5% 80px;
+  }
+
+  .timeline {
+    padding-left: 35px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline-marker {
+    left: -35px;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-marker span {
+    width: 4px;
+    height: 4px;
+  }
+
+  .timeline-card {
+    padding: 23px;
+  }
+
+  .timeline-header h2 {
+    font-size: 22px;
+  }
+
+  .role-number {
+    display: none;
+  }
+
+  .achievement {
+    margin-left: 35px;
+  }
+}
