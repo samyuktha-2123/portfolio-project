@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class Projects {
   projectDetails(projectId: string) {
-    window.location.href = `/projects/${projectId}`;
+    window.location.href = `#/projects/${projectId}`;
   }
 }
